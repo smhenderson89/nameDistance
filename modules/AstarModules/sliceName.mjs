@@ -28,7 +28,6 @@ export function sliceName(input) {
     // console.log(letterArray);
     return letterArray
 }
-
 /* Example Use
 
 
