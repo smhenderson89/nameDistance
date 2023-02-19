@@ -8,3 +8,7 @@ function getInput() {
     console.log(`Name: ${textInput}, keyboard: ${keyboard}`);
     return false    
 }
+
+function test() {
+    console.log('function works!')
+}

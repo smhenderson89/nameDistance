@@ -5,6 +5,9 @@ Use sliceName.js to determine intial list of characters for names
 Use Astar.js file to determine distance travaled for each letter between names
 Return the sum total of those distances as a final value
 
+Test commands
+nameDistance('Majesty', 'qwerty')
+
 */
 
 // Import helper functions
