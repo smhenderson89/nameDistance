@@ -5,7 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Name Distance - Tech Demo</title>
-
+    <!-- Module Import -->
+    <sciprt type = "module" src = "js/main.js"></sciprt> 
+    <sciprt type = "module" src = "js/cat.js"></sciprt> 
+    <!-- Script Import -->
+    <script src = "/js/test.js"></script> 
+    <script>
+        function grabValues() {
+            let name = document.getElementById("inputName").value;
+            let keyboard = document.getElementById("keyboard").value;
+            console.log(`Name: ${name}, keyboard: ${keyboard}`);
+            htmlDistance(name, keyboard)
+        }
+    </script>
 </head>
 <body>
     <h3>Name Distance Tech Demo</h3>
@@ -32,18 +44,13 @@
         <div>Results here: </div>
         <div id = results></div>
     </p>
-    <!-- Module Import -->
-    <sciprt type = "module" src = "/js/main.js"></sciprt> 
-    <!-- Script Import -->
-    <script src = "/js/test.js"></script> 
-    <script>
 
-        function grabValues() {
-            let name = document.getElementById("inputName").value;
-            let keyboard = document.getElementById("keyboard").value;
-            console.log(`Name: ${name}, keyboard: ${keyboard}`);
-            htmlDistance(name, keyboard)
-        }
-    </script>
+    <h6>Test simple module</h6>
+    <button type = "button" onclick = "catMeow()">Sample Module</button>
+    <p>
+        <div>Results here: </div>
+        <div id = results></div>
+    </p>
+
 </body>
 </html>
