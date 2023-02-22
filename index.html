@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Distance - Tech Demo</title>
-    <!-- Module Import -->
-    <sciprt type = "module" src = "js/main.js"></sciprt> 
-    <sciprt type = "module" src = "js/cat.js"></sciprt> 
+    <title>Name Distance - Tech Demo</title> 
     <!-- Script Import -->
     <script src = "/js/test.js"></script> 
+    <script src = "/js/apiCall.js"></script>
+    <!-- Axios Script -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         function grabValues() {
             let name = document.getElementById("inputName").value;
@@ -38,19 +38,11 @@
     </form>
     <br>
     <br>
-    <h6>Test HTML distance function - intermediate function</h6>
-    <button type = "button" onclick = "grabValues()">Grab Values</button>
+    <h6>Test frontend function call</h6>
+    <button type = "button" onclick = "apiCall()">apiCall</button>
     <p>
         <div>Results here: </div>
         <div id = results></div>
     </p>
-
-    <h6>Test simple module</h6>
-    <button type = "button" onclick = "catMeow()">Sample Module</button>
-    <p>
-        <div>Results here: </div>
-        <div id = results></div>
-    </p>
-
 </body>
 </html>
