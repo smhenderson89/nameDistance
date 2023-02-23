@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Name Distance - Tech Demo</title> 
     <!-- Script Import -->
-    <script src = "/js/test.js"></script> 
-    <script src = "/js/apiCall.js"></script>
+    <!-- <script src = "/js/test.js"></script>  -->
+    <script src = "./js/apiCall.js"></script>
     <!-- Axios Script -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
@@ -21,27 +21,20 @@
 </head>
 <body>
     <h3>Name Distance Tech Demo</h3>
-    <button type = "button" onclick = "getInput()">Test Form Input</button>
-    <br>
-    <br>
-    <form className = "searchBar" onsubmit = "htmlDistance();">
+    <form className = "searchBar">
         <label for="input name">Enter a Name</label>
         <input type = "text" id = "inputName" name = "inputName" placeholder="George"  />
         <br>
         <label for="Keyboard Layout">Choose a Keyboard</label>
         <select name = "keyboard" id = "keyboard">
-            <option value = "QWERTY">QWERTY</option>
-            <option value = "ORTHOLINEAR">ORTHOLINEAR</option>
+            <option value = "qwerty">QWERTY</option>
+            <option value = "ortho">ORTHOLINEAR</option>
         </select>
         <br>
-        <button className="button-19 m-2" type = "submit">Name Distance</button>
     </form>
-    <br>
-    <br>
-    <h6>Test frontend function call</h6>
-    <button type = "button" onclick = "apiCall()">apiCall</button>
+    <button type = "button" onclick = "nameDistanceCall()">apiCall</button>
     <p>
-        <div>Results here: </div>
+        <div>Results here:</div>
         <div id = results></div>
     </p>
 </body>
