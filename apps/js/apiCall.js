@@ -20,25 +20,65 @@ function nameDistanceCall () {
 }
 
 function showResults(info) {
-  // Create Box Header
-  const box = document.getElementById("results")
-  let row = document.createElement("div")
-  row.class = "row"
-  let col = document.createElement("div")
-  col.class = "col"
-  col.innerHTML = `Name : ${info[0].name}`
-  box.append(row)
-  box.append(col)
+  // Destroy previous box
+  const table = document.getElementById("table")
+  table.innerHTML = " "
+  
+  // Create Box Headers
 
-  // Create Table headers
-  box.append(row)
-  headers = ['Start Letter', "End Letter", "Path", "Distance"]
+  let thead = table.createTHead()
+  let tr = thead.insertRow()
+  headers = ['Start Letter', "End Letter", "Keyboard Path", "Distance"]
   for (let i = 0; i < headers.length; i++) {
+    let col = document.createElement("th")
+    col.scope = "col"
     col.innerHTML = headers[i]
-    box.append(col)
+    tr.appendChild(col)
   }
 
-  // Show Data
+  // Show API Call Data
+  let tbody = document.createElement("tbody")
+  table.append(tbody)
+  for (let j = 1; j < ((info.length) - 1); j++) {
+    // Row
+    tbody.insertRow()
+
+    // Start
+    let th = document.createElement("th")
+    th.scope = "row"
+    th.innerHTML = `${info[j].start}`
+    tbody.appendChild(th)
+
+    // End Letter
+    let td1 = document.createElement("td")
+    td1.innerHTML = `${info[j].end}`
+    tbody.appendChild(td1)
+
+    // Keyboard Path
+    let td2 = document.createElement("td")
+
+    // Add Arrows to the Path
+    let jsonPath = info[j].path
+    let arrowPath = "";
+    for (let k = 0; k < info.length; k++) {
+      if (k < (jsonPath.length) -1) {
+        arrowPath += jsonPath[k]
+        arrowPath += "→"
+      } else {
+        arrowPath += jsonPath[k]
+      }
+    }
+
+    td2.innerHTML = arrowPath;
+    tbody.appendChild(td2)
+
+    // Distance
+    let td3 = document.createElement("td")
+    td3.innerHTML = `${info[j].distance}`
+    tbody.appendChild(td3)    
+  }
+}
+
   // for (let j = 1; j < ((info.length) - 1); j++) {
   //   box.appendChild(row)
   //   col.innerHTML = info[j].start
@@ -50,4 +90,3 @@ function showResults(info) {
   //   col.innerHTML = info[j].path
   //   box.appendChild(col)
   // }
-}
