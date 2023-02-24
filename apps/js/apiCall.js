@@ -59,8 +59,10 @@ function showResults(info) {
 
     // Add Arrows to the Path
     let jsonPath = info[j].path
+
+    // If same letter, replace
     let arrowPath = "";
-    for (let k = 0; k < info.length; k++) {
+    for (let k = 0; k < jsonPath.length; k++) {
       if (k < (jsonPath.length) -1) {
         arrowPath += jsonPath[k]
         arrowPath += "→"
@@ -72,11 +74,20 @@ function showResults(info) {
     td2.innerHTML = arrowPath;
     tbody.appendChild(td2)
 
-    // Distance
+    // Distance for Letter
     let td3 = document.createElement("td")
     td3.innerHTML = `${info[j].distance}`
-    tbody.appendChild(td3)    
+    tbody.appendChild(td3)
   }
+
+  // Total Distance Summation
+  let row = document.createElement("tr")
+  tbody.append(row)
+  let col = document.createElement("th")
+  col.scope = "col";
+  let totalDistance = (info[(info.length -1)]).totalDistance // Grab the last element of the array
+  col.innerHTML = `Total: ${totalDistance}`
+  row.append(col)
 }
 
   // for (let j = 1; j < ((info.length) - 1); j++) {
