@@ -4,7 +4,7 @@
   "description": "A star demo website",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "test root directory",
     "start": "cd backend && nodemon app.js"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "yarn": "^1.22.19"
   },
   "workspaces": [
-    "./backend/*"
+    "./backend/*",
+    "backend"
   ]
 }
