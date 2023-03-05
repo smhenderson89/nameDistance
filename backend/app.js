@@ -4,6 +4,9 @@ import cors from "cors" // Enable CORS
 
 var hostname = process.env.YOUR_HOST || "127.0.0.1";
 var PORT = process.env.PORT || 4000;
+// Console log hosting info
+console.log(`DEBUG: Heroku info: ${hostname}: ${PORT}`)
+
 import http from "http";
 var app = express()
 const server = http.createServer(app);
