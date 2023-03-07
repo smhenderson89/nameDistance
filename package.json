@@ -1,28 +1,32 @@
 {
-  "name": "astar",
+  "name": "backend-a-star",
   "version": "1.0.0",
-  "description": "A star demo website",
-  "main": "index.html",
+  "description": "backend files for API call",
+  "main": "app.js",
   "scripts": {
-    "test": "test root directory",
-    "start": "cd backend && nodemon app.js"
+    "test": "echo 'backend pacakges installed!'",
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
+  "type": "module",
+  "author": "Scott Henderson",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21"
+  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/smhenderson89/nameDistance.git"
   },
-  "author": "Scott",
-  "license": "ISC",
+  "keywords": [
+    "Astar",
+    "javascript"
+  ],
   "bugs": {
     "url": "https://github.com/smhenderson89/nameDistance/issues"
   },
-  "homepage": "https://github.com/smhenderson89/nameDistance#readme",
-  "dependencies": {
-    "axios": "^1.3.3",
-    "nodemon": "^2.0.21"
-  },
-  "workspaces": [
-    "./backend/*",
-    "backend"
-  ]
+  "homepage": "https://github.com/smhenderson89/nameDistance#readme"
 }
