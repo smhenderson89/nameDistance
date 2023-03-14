@@ -30,11 +30,11 @@ function nameDistance (name, keyboard) {
     }
     distanceObject.push({"totalDistance" : totalDistance})
 
-    // console.log(`Keyboard: ${keyboard}, JSON Object for ${name} is: `)
-    // console.log(distanceObject)
+    console.log(`Keyboard: ${keyboard}, JSON Object for ${name} is: `)
+    console.log(distanceObject)
     return distanceObject // return object to express route
 }
 
 export default nameDistance
 
-// nameDistance('Majesty', 'qwerty')
+nameDistance('mary', 'dvorak')

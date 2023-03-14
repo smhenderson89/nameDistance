@@ -21,6 +21,8 @@ export function adjacentLetters(letter, keyboard) {
         case "ortho" :
             adjacentKeys = orthoAdjLettersObject;
             break;
+        case "dvorak" :
+            adjacentKeys = dvorakAdjKeysObject;
     }
     return adjacentKeys[letter]
 }
@@ -34,6 +36,9 @@ export function letterToRowCol(letter, keyboard) {
             break;
         case "ortho" :
             coordinates = orthoLetterKey[letter];
+            break;
+        case "dvorak" :
+            coordinates = dvorakLetterKey[letter];
             break;
     }
     let row = coordinates[0]
