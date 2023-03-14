@@ -88,7 +88,6 @@ export function Astar(start, end, board) {
             } else {
                 if (openList.length > 1) {
                     for (let i = 0; i < openList.length; i++) {
-                        // console.log('Letter', openList[i].letter, ', F(cost): ', openList[i].f)
                         if (openList[i].f < openList[lowestIndex].f) { // if found lowest index
                             lowestIndex = i
                         }

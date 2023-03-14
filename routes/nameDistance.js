@@ -23,8 +23,6 @@ router.get('/test', function(req, res, next){
 router.get('/:keyboard&:name', cors(), function(req, res, next) {
     var keyboard = req.params.keyboard;
     var name = req.params.name;
-    // console.log(keyboard);
-    // console.log(name);
     var nameData = nameDistance(name, keyboard)
     res.status(200).json({
         result : true, 
