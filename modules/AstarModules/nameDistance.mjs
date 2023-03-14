@@ -37,4 +37,4 @@ function nameDistance (name, keyboard) {
 
 export default nameDistance
 
-nameDistance('mary', 'dvorak')
+// nameDistance('mary', 'dvorak')
