@@ -35,6 +35,8 @@ function nameDistance (name, keyboard) {
     return distanceObject // return object to express route
 }
 
+// nameDistance('supercalifragilisticexpialidocious', 'dvorak')
+
 export default nameDistance
 
-// nameDistance('mary', 'dvorak')
+
