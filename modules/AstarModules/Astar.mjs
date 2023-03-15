@@ -65,10 +65,13 @@ export function Astar(start, end, board) {
         var currentNode = {}
         // console.log('Path from', startLetter, 'to', endLetter)
 
+        // DEBUG: Prevent Infinte loops
+        var whileLoops = 0;
+
         //push startNode onto openList
         openList.push(startNode)
 
-        while (openList.length > 0) { // while end point has not been found
+        while (openList.length > 0 && whileLoops != 15) { // while end point has not been found, or loops exceed 15
             //currentNode = find lowest f in openList, OR the End location!
             //Grab lowest f(x) to process next
             let lowestIndex = 0
@@ -85,7 +88,7 @@ export function Astar(start, end, board) {
                 // console.log(`Length of travel: ${distance}`) ; // Distance between lengths
 
                 return [distance, letterPath]
-            } else {
+            } else { // Continue with aglorithim
                 if (openList.length > 1) {
                     for (let i = 0; i < openList.length; i++) {
                         if (openList[i].f < openList[lowestIndex].f) { // if found lowest index
@@ -137,8 +140,20 @@ export function Astar(start, end, board) {
                 lettersToEval.push(openList[i].letter)
             }
 
+            // console.log(`DEBUG: lettersToEval : ${lettersToEval}`);
+
             // Evalute for lowest f cost for next value at start of the loop
             // save parent Node for next loop
+
+            // Prevent infine loops
+            whileLoops++
         }
+
+        // DEBUG: If Astar exceeds 15 repetitions, then output last known spot
+        console.log(`Times through Astar algo: ${whileLoops}`);
+        console.log(`Closed List: ${closedList}`);
+        console.log(``)
+        
     }
+
 }

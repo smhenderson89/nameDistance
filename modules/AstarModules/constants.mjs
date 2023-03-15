@@ -197,14 +197,14 @@ export const dvorakAdjKeysObject = {
     'L' : ['R', 'N', 'S'],
     'A' : ['O'],
     'O' : ['A', 'E', 'Q'],
-    'E' : ['O', 'U', 'Q', 'J'],
-    'U' : ['E', 'I', 'J', 'K'],
-    'I' : ['U', 'D', 'K', 'X'],
-    'D' : ['I', 'H', 'X', 'B'],
-    'H' : ['D', 'T', 'B', 'M'],
-    'T' : ['H', 'N', 'M', 'W'],
-    'N' : ['T', 'S', 'W', 'V'],
-    'S' : ['N', 'V', 'Z'],
+    'E' : ['P', 'O', 'U', 'Q', 'J'],
+    'U' : ['P', 'Y', 'E', 'I', 'J', 'K'],
+    'I' : ['Y', 'F', 'U', 'D', 'K', 'X'],
+    'D' : ['F', 'G', 'I', 'H', 'X', 'B'],
+    'H' : ['G', 'C', 'D', 'T', 'B', 'M'],
+    'T' : ['C', 'R', 'H', 'N', 'M', 'W'],
+    'N' : ['R', 'L', 'T', 'S', 'W', 'V'],
+    'S' : ['L', 'N', 'V', 'Z'],
     'Q' : ['O', 'E', 'J'],
     'J' : ['E', 'U', 'Q', 'K'],
     'K' : ['U', 'I', 'J', 'X'],
@@ -216,7 +216,7 @@ export const dvorakAdjKeysObject = {
     'Z' : ['S', 'V']
 }
 
-const dvorakLetterKey = {
+export const dvorakLetterKey = {
     'P' : [3, 4],
     'Y' : [3, 5],
     'F' : [3, 6],
