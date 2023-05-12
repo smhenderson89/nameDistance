@@ -16,9 +16,9 @@ import cors from "cors" // Enable CORS
 import nameDistance from '../modules/AstarModules/nameDistance.mjs'
 var router = express.Router();
 
-router.get('/test', function(req, res, next){
-    res.send('testing route');
-})
+// router.get('/test', function(req, res, next){
+//     res.send('testing route');
+// })
 
 router.get('/:keyboard&:name', cors(), function(req, res, next) {
     var keyboard = req.params.keyboard;
