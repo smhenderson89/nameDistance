@@ -1,10 +1,18 @@
 // boilerplate
 import express from 'express'
 import cors from "cors" // Enable CORS
+import hbs from 'hbs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
+// Use __dirname in ES Module
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+// Hosting Info
 var hostname = process.env.YOUR_HOST || "127.0.0.1";
 var PORT = process.env.PORT || 4000;
-// Console log hosting info
 console.log(`DEBUG: Heroku info: ${hostname}: ${PORT}`)
 
 import http from "http";
@@ -14,6 +22,11 @@ const server = http.createServer(app);
 // Routes intialize
 var router = express.Router()
 import nameDistance from './routes/nameDistance.js';
+
+// Hanldebars
+app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "/templates/views"))
+hbs.registerPartials(path.join(__dirname, "/templates/partials"))
 
 // Routes setup
 app.use('/dist', nameDistance);
@@ -34,6 +47,22 @@ app.use(function(req, res, next) {
 app.get('/', (req, res) => {
   res.send('Hello Scott!')
 })
+
+
+// Handlebars testing
+app.get("/handlebars", (req, res) => {
+  res.render("index", {
+    title: "About",    
+    name: "Arash Arora",  
+  })
+})
+
+app.get("/about", (req, res) => {  
+  res.render("about", {    
+      title: "About",    
+      name: "Arash Arora",  
+  });
+});
 
 app.get('/howdy', (req, res) => {
   res.send('Howdy! 🎈')
